@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-export default function () { 
+export default function ({user}) { 
     const {query} = useRouter()
     console.log(query.id)
     return (
@@ -10,8 +10,17 @@ export default function () {
                 <a href="/users" style={{ color: '#333', textDecoration: 'none' }}>users</a>
             </div>
             <div style={{ padding: '20px' }}>
+                
                 <h1 style={{ color: '#2c5f2d' }}>Пользователь {query.id}</h1>
+                 <h3>{user.name}</h3>
             </div>
         </div>
     )
+}
+export async function getServerSideProps({params}) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
+    const user = await res.json()
+    return {
+        props: {user}
+    }
 }
