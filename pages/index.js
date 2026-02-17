@@ -1,14 +1,18 @@
 import Link from "next/link"
+import globalStyles from '../styles/global.js';
 
 const Index = () => { 
     return (
         <div>
-            <div style={{ padding: '20px', background: '#f0f0f0', marginBottom: '20px' }}>
+            <div>
                 <Link href='/' style={{ marginRight: '15px', color: '#333', textDecoration: 'none' }}>home</Link>
                 <Link href='/users' style={{ marginRight: '15px', color: '#333', textDecoration: 'none' }}>users</Link>
             </div>
             <h1>main</h1>
-            <style jsx>
+            <style global jsx>
+                {globalStyles}
+            </style>
+            {/* <style jsx>
                 { 
                 `
                 body{
@@ -22,7 +26,7 @@ const Index = () => {
                 }
                 `
                 }
-            </style>
+            </style> */}
         </div>
     )
 }

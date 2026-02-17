@@ -1,5 +1,5 @@
 import Link from "next/link"
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 const Users = () => { 
     const imitat = [
@@ -8,7 +8,20 @@ const Users = () => {
     ]
 
     const [users, setUsers] = useState(imitat)
-
+    const [loading, setLoading] = useState(true)
+    useEffect(() => { 
+        setTimeout(() => {
+            fetch('https://jsonplaceholder.typicode.com/users')
+            .then(d => d.json())
+            .then(d => {
+                setUsers(d)
+                setLoading(false)
+             })
+            .catch(e=> console.log(e + 'kkjkjkjk'))
+         },2000)
+        
+        
+    }, [])
     return (
         <div>
             <div style={{ padding: '20px', background: '#f0f0f0', marginBottom: '20px' }}>
@@ -17,7 +30,7 @@ const Users = () => {
             </div>
 
             <h1 style={{ color: '#2c5f2d', marginLeft: '20px' }}>users</h1> 
-           
+            <p>{loading && 'loading...'}</p>
             <ul style={{ listStyle: 'none', padding: '0 20px' }}>
                 {users.map(user => (
                     <div key={user.id} style={{ 
