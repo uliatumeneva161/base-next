@@ -1,8 +1,7 @@
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
-export default function ({user}) { 
-    const {query} = useRouter()
-    console.log(query.id)
+export default function User({user}) { 
+    // const {query} = useRouter()
     return (
         <div>
             <div style={{ padding: '20px', background: '#f0f0f0', marginBottom: '20px' }}>
@@ -11,7 +10,7 @@ export default function ({user}) {
             </div>
             <div style={{ padding: '20px' }}>
                 
-                <h1 style={{ color: '#2c5f2d' }}>Пользователь {query.id}</h1>
+                <h1 style={{ color: '#2c5f2d' }}>Пользователь {user.id}</h1>
                  <h3>{user.name}</h3>
             </div>
         </div>

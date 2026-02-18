@@ -7,7 +7,7 @@ export default css.global`
     font-size: 18px;
     font-weight: 400;
     line-height: 1.8;
-    color: #ff0099;
+    color: #71445f;
     font-family: sans-serif;
   }
   h1 {

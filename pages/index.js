@@ -1,17 +1,14 @@
-import Link from "next/link"
-import globalStyles from '../styles/global.js';
+
+
+import MainContainer from "../components/MainContainer.js";
 
 const Index = () => { 
     return (
-        <div>
-            <div>
-                <Link href='/' style={{ marginRight: '15px', color: '#333', textDecoration: 'none' }}>home</Link>
-                <Link href='/users' style={{ marginRight: '15px', color: '#333', textDecoration: 'none' }}>users</Link>
-            </div>
+        <MainContainer>
+           
+         
             <h1>main</h1>
-            <style global jsx>
-                {globalStyles}
-            </style>
+           
             {/* <style jsx>
                 { 
                 `
@@ -27,7 +24,7 @@ const Index = () => {
                 `
                 }
             </style> */}
-        </div>
+        </MainContainer>
     )
 }
 export default Index

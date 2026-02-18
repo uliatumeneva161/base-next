@@ -1,15 +1,10 @@
-import Link from "next/link"
 import {useState} from 'react'
-
+import MainContainer from '../components/MainContainer'
+import Link from 'next/link'
 const Users = ({users}) => { 
     // const [loading, setLoading] = useState(false)
     return (
-        <div>
-            <div style={{ padding: '20px', background: '#f0f0f0', marginBottom: '20px' }}>
-                <Link href='/' style={{ marginRight: '15px', color: '#333', textDecoration: 'none' }}>home</Link>
-                <Link href='/users' style={{ marginRight: '15px', color: '#333', textDecoration: 'none' }}>users</Link>
-            </div>
-
+        <MainContainer>
             <h1 style={{ color: '#2c5f2d', marginLeft: '20px' }}>users</h1> 
             {/* <p>{loading && 'loading...'}</p> */}
             <ul style={{ listStyle: 'none', padding: '0 20px' }}>
@@ -30,7 +25,7 @@ const Users = ({users}) => {
                     </div>
                 ))}
             </ul>
-        </div>
+        </MainContainer>
     )
 }
 
