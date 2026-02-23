@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Users = ({users}) => { 
     // const [loading, setLoading] = useState(false)
     return (
-        <MainContainer>
+        <MainContainer keywords={'users page'}>
             <h1 style={{ color: '#2c5f2d', marginLeft: '20px' }}>users</h1> 
             {/* <p>{loading && 'loading...'}</p> */}
             <ul style={{ listStyle: 'none', padding: '0 20px' }}>

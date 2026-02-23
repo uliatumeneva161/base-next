@@ -1,12 +1,13 @@
 
 
 import MainContainer from "../components/MainContainer.js";
+import Ts from "../components/Ts.tsx"
 
 const Index = () => { 
     return (
-        <MainContainer>
+        <MainContainer keywords={'index page'}>
            
-         
+            <Ts/>
             <h1>main</h1>
            
             {/* <style jsx>
